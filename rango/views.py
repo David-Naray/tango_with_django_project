@@ -9,4 +9,5 @@ def index(request):
 
 def about(request):
 
-    return render(request, 'rango/about.html')
+    context_dict = {'boldmessage': 'this tutorial was put put together byDavid Naray'}
+    return render(request, 'rango/about.html', context=context_dict)

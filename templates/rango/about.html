@@ -9,9 +9,15 @@
     </head>
     <body>
         <h1>Rango says...</h1>
+        <div>
+            here is the about page! <br />
+            <strong>{{ boldmessage }}</strong><br />
+        </div>
 
         <div>
-            <a href="/rango/">About</a><br />
+            <a href="/rango/">to Index</a><br />
+            <img src="{% static 'images/burzoi.jpg' %}"alt="meme" />
+            <img src="{{ MEDIA_URL }}silence.png"alt="Picture of a Cat."/>
         </div>
     </body>
 </html>
