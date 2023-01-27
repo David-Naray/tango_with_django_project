@@ -10,10 +10,13 @@ def index(request):
     # Place the list in our context_dict dictionary (with our boldmessage!)
     # that will be passed to the template engine.
     category_list = Category.objects.order_by('-likes')[:5]
+    #similarly with pages for view count
+    Page_list = Page.objects.order_by('-views')[:5]
     # Note the key boldmessage matches to {{ boldmessage }} in the template!
     context_dict = {}
     context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
     context_dict['categories'] = category_list
+    context_dict['pages'] = Page_list
     return render(request, 'rango/index.html', context=context_dict)
 
 
