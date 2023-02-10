@@ -6,6 +6,7 @@ from rango.models import Category
 from rango.models import Page
 from rango.forms import CategoryForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 from django.contrib.auth import authenticate, login
 
@@ -222,3 +223,11 @@ def some_view(request):
 def restricted(request):
     return HttpResponse("Since you're logged in, you can see this text!")
 
+# Use the login_required() decorator to ensure only those logged in can
+# access the view.
+@login_required
+def user_logout(request):
+    # Since we know the user is logged in, we can now just log them out.
+    logout(request)
+    # Take the user back to the homepage.
+    return redirect(reverse('rango:index'))
