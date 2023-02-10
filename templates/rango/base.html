@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-
+{% load rango_template_tags %}
 <html>
     <head lang="en">
         <meta charset="UTF-8" />
@@ -12,7 +12,13 @@
     </head>
     <body>
         {% block body_block %}
-        {% endblock %}
+            
+        {% endblock %}            
+        <div>
+            {% block sidebar_block %}
+                {% get_category_list category %}
+            {% endblock %}
+        </div>
 
         </div>
         <hr />
