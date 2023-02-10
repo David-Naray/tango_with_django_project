@@ -221,7 +221,8 @@ def some_view(request):
 
 @login_required
 def restricted(request):
-    return HttpResponse("Since you're logged in, you can see this text!")
+    return render(request,'rango/restricted.html')
+    #return HttpResponse("Since you're logged in, you can see this text!")
 
 # Use the login_required() decorator to ensure only those logged in can
 # access the view.
