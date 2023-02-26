@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+#python manage.py clearsessions will clear cookies stored in the DB
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
@@ -117,7 +119,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+SESSION_EXPIRE_AT_BROWSER_CLOSE=True
+SESSION_COOKIE_AGE=86400
 LOGIN_URL = 'rango:login'#redirects any not logged in user to this url activated by @login_required
 
 # Static files (CSS, JavaScript, Images)
